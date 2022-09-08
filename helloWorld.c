@@ -3,6 +3,8 @@
 
 int main()
 {
-    printf("Hello world!"); //visszatérési értéke a benne lévő karakterek száma
+    printf("Szia uram!\n"); //visszatérési értéke a benne lévő karakterek száma
+    int a;
+    scanf("°%d", &a);
     return 0;
-}
+}   
