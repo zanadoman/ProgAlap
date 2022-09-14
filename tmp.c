@@ -79,3 +79,13 @@ int karika()
 
     return 0;
 }
+int ketszamcsere()
+{
+    //Harmdik pohár segítségével lehet két pohár tartalmát megcserélni
+    int a = 3;
+    int b = 5;
+
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
