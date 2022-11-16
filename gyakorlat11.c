@@ -3,39 +3,19 @@
 #define permutationsLength 18
 
 int input(int *x);
+int permutation(char *permutations, int *array);
 
 int main()
 {
     int array[arrayLength];
-    char permutations[permutationsLength];
-    int count = 0;
+    char permutations[18];
 
     for (int i = 0; i < arrayLength; i++)
     {
         input(&array[i]);
     }
 
-    for (int x = 0; x < 3; x++)
-    {
-        for (int y = 0; y < 3; y++)
-        {
-            if (y == x)
-            {
-                continue;
-            }
-            for (int z = 0; z < 3; z++)
-            {
-                if (z == x || z == y)
-                {
-                    continue;
-                }
-                permutations[3 * count] = array[x] + 48;
-                permutations[3 * count + 1] = array[y] + 48;
-                permutations[3 * count + 2] = array[z] + 48;
-                count++;
-            }
-        }
-    }
+    permutation(permutations, array);
 
     for (int i = 0; i < 6; i++)
     {
@@ -60,6 +40,35 @@ int input(int *x)
             while ((c = getchar()) != '\n');
         }
     } while (ok);
-    
+
+    return 0;
+}
+
+int permutation(char *permutations, int *array)
+{
+    int count = 0;
+
+    for (int x = 0; x < 3; x++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            if (y == x)
+            {
+                continue;
+            }
+            for (int z = 0; z < 3; z++)
+            {
+                if (z == x || z == y)
+                {
+                    continue;
+                }
+                permutations[3 * count] = array[x] + 48;
+                permutations[3 * count + 1] = array[y] + 48;
+                permutations[3 * count + 2] = array[z] + 48;
+                count++;
+            }
+        }
+    }
+
     return 0;
 }
